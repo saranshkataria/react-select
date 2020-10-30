@@ -1,0 +1,83 @@
+html {
+  font-size: 1.375em;
+}
+
+.select-container {
+  background: #ffffff;
+  max-width: 30rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.custom-select {
+  position: relative;
+}
+
+.select-input {
+  display: block;
+  font-size: 1rem;
+  padding: 0.6rem 1.4rem 0.5rem 0.8rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid #aaa;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  border-radius: 0.25rem;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.down-icon {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1;
+  border: 1px solid white;
+  background: transparent;
+}
+
+.custom-select-options {
+  max-height: 15rem;
+  overflow-y: scroll;
+  border-radius: 0 0 0.25rem 0.25rem;
+  margin: 0;
+  margin-top: 0;
+  padding: 0;
+  list-style-type: none;
+  font-weight: normal;
+  cursor: pointer;
+  z-index: 2;
+  position: absolute;
+  width: calc(100% - 1px);
+  background-color: #ffffff;
+}
+
+.custom-select-options li {
+  border: 1px solid #aaa;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select-options li {
+  padding: 1rem;
+}
+
+.custom-select-options li:hover {
+  color: #fff;
+  border: 1px solid blue;
+  border-width: 0 0 0 1px;
+}
+
+.blue-bg:hover {
+  background: blue;
+}
+
+.hidden {
+  display: none;
+}
