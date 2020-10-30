@@ -68,7 +68,7 @@ function App() {
 
 ## Props
 
-The Select takes in 4 [props](#props):
+The Select takes in 4 props:
 
 - options which is the input options to the select component
 - placeholder which is the placheholder that is displayed in the input box
