@@ -75,12 +75,12 @@ The Select takes in 4 props:
 - onChange function which is triggerred when a value is selected by the user
 - theme which is an object wherein multiple classes can be passed in to be added to different parts of the component
 
-| Prop        | Default |    Type    | Description                                                                                                                                                                                      |
-| :---------- | :-----: | :--------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| options     |   []    |  `array`   | The input list of options the user can select from. This can be an array of strings or an array of objects with properties id and title.                                                         |
-| placeholder |   N/A   |  `string`  | The default text shown when the component is displayed and no value is selected.                                                                                                                 |
-| onChange    |   N/A   | `function` | Invoked every time the user selects an option                                                                                                                                                    |
-| theme       |   N/A   |  `object`  | To define your custom theme on the select component. You can specify different class names to be added to the components here and they will be overriden with the default ones in the component. |
+| Prop        |    Type    |                                                                                           Description                                                                                            |
+| :---------- | :--------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| options     |  `array`   |                             The input list of options the user can select from. This can be an array of strings or an array of objects with properties id and title.                             |
+| placeholder |  `string`  |                                                         The default text shown when the component is displayed and no value is selected.                                                         |
+| onChange    | `function` |                                                                          Invoked every time the user selects an option                                                                           |
+| theme       |  `object`  | To define your custom theme on the select component. You can specify different class names to be added to the components here and they will be overriden with the default ones in the component. |
 
 ### Theme
 
