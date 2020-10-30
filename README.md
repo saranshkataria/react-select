@@ -31,7 +31,7 @@ import React from 'react';
 import Select from '../Select';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -63,7 +63,7 @@ function App() {
       </header>
     </div>
   );
-}
+};
 ```
 
 ## Props
@@ -86,9 +86,9 @@ The Select takes in 4 props:
 
 The theme object can have 4 key value pairs:
 
-- selectContainerClassNames: the class names to be applied to the select container
-- listItemClassnames: the class names to be applied to the list items
-- inputClassNames: the class names to be applied to the input box
-- optionsContainerClassNames: the class names to be applied to the options container
+- `selectContainerClassNames`: the class names to be applied to the select container
+- `listItemClassnames`: the class names to be applied to the list items
+- `inputClassNames`: the class names to be applied to the input box
+- `optionsContainerClassNames`: the class names to be applied to the options container
 
 These can be provided in the theme object as a prop and will override default class names provided to the container. This functionality has been intentionally kept flexible enough so as to let the user add class names and style it instead of manually passing in styles and doing a lot of theme handling
