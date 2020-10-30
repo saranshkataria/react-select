@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# React Select
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a package for a single-select React component that can select one value from a given list of values.
+The package is built using Create React App and 2 select examples are shown as part of the App component.
 
-## Available Scripts
+- [Installation](#installation)
+- [Basic Usage](#basic-usage)
+- [Props](#props)
+  - [Theme](#theme)
 
-In the project directory, you can run:
+## Installation
 
-### `yarn start`
+```bash
+$ yarn
+$ yarn start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Basic Usage of Select Component
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The Select takes in 4 [props](#props):
 
-### `yarn test`
+- options which is the input options to the select component
+- placeholder which is the placheholder that is displayed in the input box
+- onChange function which is triggerred when a value is selected by the user
+- theme which is an object wherein multiple classes can be passed in to be added to different parts of the component
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In your App Component, import the Select component and use it as follows:
 
-### `yarn build`
+```jsx
+import React from 'react';
+import Select from '../Select';
+import './App.css';
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <Select
+          options={[
+            {
+              id: 1,
+              title: 'Really Long Example Input',
+            },
+            { id: 2, title: 'Input 1' },
+            { id: 3, title: 'Input 2' },
+            { id: 4, title: 'Input 3' },
+            { id: 5, title: 'Input 4' },
+            { id: 6, title: 'Input 5' },
+          ]}
+          onChange={(selected) => {
+            console.log('Object example, selected value: ' + selected.title);
+          }}
+          placeholder="Object example"
+        />
+        <Select
+          options={['Saransh', 'Kataria']}
+          onChange={(selected) => {
+            console.log('String example, selected value: ' + selected);
+          }}
+          placeholder="String example"
+          theme={{ listItemClassnames: 'red-bg' }}
+        />
+      </header>
+    </div>
+  );
+}
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Props
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The Select takes in 4 [props](#props):
 
-### `yarn eject`
+- options which is the input options to the select component
+- placeholder which is the placheholder that is displayed in the input box
+- onChange function which is triggerred when a value is selected by the user
+- theme which is an object wherein multiple classes can be passed in to be added to different parts of the component
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+| Prop        | Default |    Type    | Description                                                                                                                                                                                      |
+| :---------- | :-----: | :--------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| options     |   []    |  `array`   | The input list of options the user can select from. This can be an array of strings or an array of objects with properties id and title.                                                         |
+| placeholder |   N/A   |  `string`  | The default text shown when the component is displayed and no value is selected.                                                                                                                 |
+| onChange    |   N/A   | `function` | Invoked every time the user selects an option                                                                                                                                                    |
+| theme       |   N/A   |  `object`  | To define your custom theme on the select component. You can specify different class names to be added to the components here and they will be overriden with the default ones in the component. |
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Theme
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The theme object can have 4 key value pairs:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- selectContainerClassNames: the class names to be applied to the select container
+- listItemClassnames: the class names to be applied to the list items
+- inputClassNames: the class names to be applied to the input box
+- optionsContainerClassNames: the class names to be applied to the options container
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+These can be provided in the theme object as a prop and will override default class names provided to the container. This functionality has been intentionally kept flexible enough so as to let the user add class names and style it instead of manually passing in styles and doing a lot of theme handling

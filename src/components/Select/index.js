@@ -3,9 +3,9 @@ import { ReactComponent as DownIcon } from './down.svg';
 import './Select.css';
 
 const Select = ({
-  placeholder,
-  options,
-  onChange,
+  placeholder = 'Select...',
+  options = [],
+  onChange = () => {},
   theme = {
     selectContainerClassNames: '',
     listItemClassnames: '',
